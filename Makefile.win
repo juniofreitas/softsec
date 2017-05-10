@@ -1,0 +1,33 @@
+# Project: SoftSec
+# Makefile created by Dev-C++ 5.4.1
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = SoftSec_private.res
+OBJ      = softsec.o $(RES)
+LINKOBJ  = softsec.o $(RES)
+LIBS     = -L"C:/Users/u4uz/AppData/Dev-Cpp/MinGW32/lib" -static-libstdc++ -static-libgcc
+INCS     = -I"C:/Users/u4uz/AppData/Dev-Cpp/MinGW32/include"
+CXXINCS  = -I"C:/Users/u4uz/AppData/Dev-Cpp/MinGW32/include"
+BIN      = SoftSec.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+softsec.o: softsec.c
+	$(CC) -c softsec.c -o softsec.o $(CFLAGS)
+
+SoftSec_private.res: SoftSec_private.rc 
+	$(WINDRES) -i SoftSec_private.rc --input-format=rc -o SoftSec_private.res -O coff 

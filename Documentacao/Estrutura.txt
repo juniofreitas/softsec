@@ -1,0 +1,29 @@
+-- softsec ---
+
+Local dos fontes: C:\Documents and Settings\Junio\Meus documentos\SoftSec\ -> ($softsec)
+Estrutura dos fontes:
+  - softsec
+      - Bases
+      - dados
+      - documentacao
+      - estruturas
+      - funcoes 
+      - Outros
+      - Scripts
+
+Local de backup: C:\junio\backup
+
+Local da documentação: ($softsec)\documentacao
+Estrutura da documentação:
+  - Cronograma.xls: descreve as atividades em períodos definidos
+  - DESCRICAO OFICIAL DO PROJETO.txt: resume os dados mais importantes do projeto e sua definição oficial
+  - softsec.ppt: uma apresentação da ferramenta
+  - Documentacao.pdf: Documentacao oficial e completa
+
+Local das anotações: Caderno oficial e caderno de anotações
+
+Linguagem: C
+Linguagem de Script: perl
+Sistema Operacional: Win32 e Linux
+IDE utilizado: dev-c++
+

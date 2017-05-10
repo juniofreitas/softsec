@@ -1,0 +1,46 @@
+Parceria UFAM/UFMG - Pareamento de Dados
+
+Entre os dias 30/05 e 03/06, a equipe formada por estudantes e profissionais
+da UFAM e UFMG esteve no Ministério do Planejamento para realizar o pareamento
+de dados de três bases fornecidas, sendo elas: CadUnico, GFIP e Óbitos. Para
+conseguir terminar todos os pareamentos desejados em tempo, resolvemos juntar
+as bases CadUnico e Óbitos. Os campos na CadUnico que não estão presentes na
+Óbitos foram mantidos vazios. Com isso, todas as vezes que alguma base é
+pareada com CadUnico, automaticamente teremos como resultado um pareamento com
+a base Óbitos também. Isso nos permitiu realizar menos pareamentos, a saber:
+
+- CadUnico-CadUnico (pareamento interno)
+- CadUnico-GFIP
+- GFIP-GFIP (pareamento interno)
+
+Nosso pareamento também permite a execução em paralelo. Em cada pareamento
+realizado, geramos 4 arquivos:
+
+- resumo -> apresenta informações sumarizadas do pareamento em questão. Ex:
+tempo gasto, valor máximo de peso, número de pares encontrados etc.
+- <nome_do_pareamento>-details.res -> nesse arquivo listamos todos os pares
+encontrados, com o valor de cada campo comparado nas duas bases pareadas e com 
+o peso atribuído ao par.
+- <nome_do_pareamento>-histogram.res -> contém um histograma dos pesos encontrados
+em todos os pares comparados.
+- <nome_do_pareamento>-weights.res -> esse arquivo lista um registro juntamente
+com os registros que foram comparados com ele e o peso associado a cada comparação.
+
+O nome dos diretórios indica qual o tipo de pareamento. O primeiro nível de
+diretórios indica as bases pareadas, ao passo que o segundo nível indica o nível
+de paralelismo e, em alguns casos, o tipo de índice usado no pareamento.
+
+O índice é o mecanismo utilizado para evitar que um determinado registro tenha
+que ser comparado com todos os outros na base. Através de um índice é possível
+restringir os registros com os quais um determinado registro irá ser comparado.
+Dependendo dos campos usados nos índices, o pareamento pode ser mais abrangente
+(mais amplo) ou mais restrito. Quanto mais amplo, maior a qualidade, mas maior
+também o consumo de memória e o tempo gasto para parear.
+
+Em alguns casos de pareamento (CadUnico-CadUnico e CadUnico-GFIP) mostramos o efeito,
+em termos de qualidade de pareamente e tempo de execução, de termos um índice mais
+restrito ou mais amplo. Além disso, existe uma outra consequência dos índices nas
+execuções paralelas. Quanto mais amplo for o índice, maior será o volume de informação
+transmitido entre os nós do cluster. Isso faz com que, em alguns casos, o tempo gasto com
+comunicação torne a execução com um nível de paralelismo maior mais lenta do que uma versão
+que executa com um nível de paralelismo menor.

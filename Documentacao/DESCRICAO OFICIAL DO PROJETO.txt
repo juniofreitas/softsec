@@ -1,0 +1,86 @@
+Univesidade Federal do Amazonas
+Departamento de Ciência da Computação
+Mestrado em Informática
+
+---------------------------------------
+PROJETO: SoftSec para o projeto Tamanduá
+ORIENTADOR: Prof. Altigran Silva
+ALUNO: Júnio da Silva de Freitas
+SITE DO PROJETO:
+DATA INÍCIO: jan/2005
+DATA FIM   : jan/2006  
+
+---------------------------------------
+DESCRIÇÃO: Este projeto faz parte do conjunto de soluções
+proposta pelo DCC ao Governo Federal na área de TI. Este
+projeto se concentra na solução do problema de encontrar
+registros duplicados nas bases de Ministério do Planejamento. 
+Para isso, será usado técnica de 
+similaridade e record linkage para obter o melhor desempenho.
+
+---------------------------------------
+DETALHES TÉCNICOS
+
+ - Os dados estão concentrados num arquivo texto de aproximadamente
+250Gb.
+ - O arquivo é composto por registros (por linha). 
+ - Cada linha contém os atributos (nome, endereço ,telefone, ...).  
+ - Existem registros repetidos, errados, representados de 
+diversas formas.
+ - A identificação será aproximada e usará técnicas avançadas
+de identificação de objetos similares
+
+---------------------------------------
+PROPOSTA DA SOLUÇÃO
+
+ - Desenvolver um programa que realiza as seguintes tarefas:
+
+   - Carregue a base indexando em estruturas
+   
+   - Otimizar os acessos aos registros
+  
+   - Realizar buscas específicas dado uma entrada e retornar
+     os registros similares
+   
+   - Realizar os processo de agrupamento de registros similares ->
+     operação custoza
+
+   - Registrar estatísticas para experimentos
+
+
+---------------------------------------
+TECNICAS UTILIZADAS
+
+
+
+
+---------------------------------------
+FERRAMENTAS UTILIZADAS
+
+
+---------------------------------------
+ESTRUTURA DE IMPLEMENTAÇÃO
+
+
+---------------------------------------
+BIBLIOGRAFIA UTILIZADA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
